@@ -1,0 +1,38 @@
+{
+  "name": "@vzbb-db-system/core",
+  "version": "0.1.0",
+  "description": "Booking Engine: Google Sheets (через Apps Script) + Passwordless Auth (Magic Links)",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^6.9.16",
+    "resend": "^4.8.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^22.7.5",
+    "@types/nodemailer": "^6.4.16",
+    "tsx": "^4.23.15",
+    "typescript": "^5.6.3"
+  }
+}
